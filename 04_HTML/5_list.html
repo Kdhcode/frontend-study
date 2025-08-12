@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            /* 스크롤 이동을 부드럽게 */
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- list 요소는 주로 메뉴나 탭 목록 등 목록을 만들 때 쓰임 -->
+    <!-- unordered list(목록): 순서가 필요없는 목록 -->
+    <ul>
+        <!-- list item(블록): 목록 내의 각 항목 -->
+         <li>사과</li>
+         <li>딸기</li>
+         <li>수박</li>
+         <li>오렌지</li>
+    </ul>
+    <!-- ordered list(목록): 순서가 있는 목록, ul에 비해 사용 빈도가 떨어짐 -->
+    <ol>
+    <!-- list item(블록): 목록 내의 각 항목 -->
+        <li>딸기</li>
+        <li>수박</li>
+        <li>오렌지</li>
+        <li>사과</li>
+    </ol>
+
+    <!-- 메뉴 구조 만들기 실습 -->
+    <!-- 예) 메인 메뉴 - 서브 메뉴 -->
+     <ul>
+        <li>
+            <a href="#">메인 메뉴1</a>
+        </li>
+        <li>
+            <a href="#">메인 메뉴2</a>
+            <ul>
+                <li>
+                    <a href="#">서브메뉴2-1</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴2-2</a>
+                    <ul>
+                        <li>
+                            <a href="#">서브 메뉴 2-2-1</a>
+                        </li>
+                        <li>
+                            <a href="#">서브 메뉴 2-2-2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">서브메뉴2-3</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">메인 메뉴3</a>
+        </li>
+        <li>
+            <a href="#">메인 메뉴4</a>
+            <ul>
+                <li>
+                    <a href="#">서브 메뉴4-1</a>
+                </li>
+                <li>
+                    <a href="#">서브 메뉴4-2</a>
+                </li>
+            </ul>
+        </li>
+     </ul>
+
+     <!-- Quiz: 서브 메뉴2-2 밑에 하위 메뉴 2개 더 추가 -->
+
+
+     <hr>
+     <!-- anchor(인라인): 닻, 페이지를 이동하는 하이퍼링크를 지정(닻을 내리는 것) -->
+    <!-- 
+     target 속성은 링크된 페이지를 어디에 표시할지 타겟 지정
+     _self: 현재 탭(기본값)
+     -blank: 새로운 탭
+     -->
+
+    <a href="http://www.naver.com">NAVER</a>
+    <a href="http://www.google.com" target="_blank">Google</a>
+
+    <!-- (추가설명) 임시 링크 -->
+    <a href="#"> 임시 링크</a>
+    <a href="javascript:void(0)">임시 링크</a>
+    
+    <!-- 해당 #id 영역으로 이동 -->
+    <a href="#intro">Intro</a>
+    <a href="#guide">Guide</a>
+    
+    <!-- 링크 이동 테스트 -->
+    <hr>
+    <h2 id="intro">Intro</h2>
+    <p style="height: 300px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Similique reiciendis dignissimos nisi saepe sunt distinctio possimus, 
+        placeat sequi fugit unde a numquam adipisci ipsum fugiat, praesentium, vero porro nesciunt facere!</p>
+    <p style="height: 300px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Similique reiciendis dignissimos nisi saepe sunt distinctio possimus, 
+        placeat sequi fugit unde a numquam adipisci ipsum fugiat, praesentium, vero porro nesciunt facere!</p>
+    <p style="height: 300px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Similique reiciendis dignissimos nisi saepe sunt distinctio possimus, 
+        placeat sequi fugit unde a numquam adipisci ipsum fugiat, praesentium, vero porro nesciunt facere!</p>
+
+    <h2 id="guide">Guide</h2>
+    <p style="height: 300px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Similique reiciendis dignissimos nisi saepe sunt distinctio possimus, 
+        placeat sequi fugit unde a numquam adipisci ipsum fugiat, praesentium, vero porro nesciunt facere!</p>
+    <p style="height: 300px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Similique reiciendis dignissimos nisi saepe sunt distinctio possimus, 
+        placeat sequi fugit unde a numquam adipisci ipsum fugiat, praesentium, vero porro nesciunt facere!</p>
+    <p style="height: 300px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Similique reiciendis dignissimos nisi saepe sunt distinctio possimus, 
+        placeat sequi fugit unde a numquam adipisci ipsum fugiat, praesentium, vero porro nesciunt facere!</p>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
