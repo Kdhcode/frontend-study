@@ -53,7 +53,7 @@
     </video>
 
     <br>
-    
+
      <!-- 웹 페이지에서 비디오를 재생하려면 다음을 수행
     1) YouTube에 동영상 업로드
     2) 동영상 ID를 기록
@@ -61,7 +61,30 @@
     4) src속성에 YouTube URL 지정
     5) width 및 height 속성을 사용하여 플레이어의 크기를 지정
     6) URL에 다른 매개변수를 추가(아래 참조)
-  -->
+    -->
+    <!--  inline frame(인라인): HTML 문서 내에 다른 문서를 삽입(웹 페이지 내에 웹 페이지를 표시) -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/cdbUA1s8Pjg" frameborder="0" ></iframe>
+    
+    <!-- 
+        유튜브 재생 목록
+        playlist: 재생할 비디어의 목록 (쉼표로 구분) 
+    -->
+    <!-- 
+        유튜브 반복재생
+        0: 한 번만 재생(기본값)
+        1: 무한 재생
+    -->
+    
+    <!-- 유튜브 자동재생 + 음소거 -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/cdbUA1s8Pjg?autoplay=1&mute=1" frameborder="0" ></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/cdbUA1s8Pjg?playlist=cdbUA1s8Pjg&loop=1" frameborder="0" ></iframe>
+    
+    <!-- 유튜브 컨트롤
+     0: 플레이어 컨트롤 표시 안함
+     1: 플레이어 컨트롤 표시(기본값)
+     -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/cdbUA1s8Pjg?controls=0" frameborder="0" ></iframe>
+
 
 
 </body>
