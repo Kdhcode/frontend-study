@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-input {
+            width: 120px;
+            padding: 6px 10px;
+            font-size: 20px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            transition: 0.5s;
+        }
+        /* Quiz: focus 됐을 때 테두리색 변셩(#f00) */
+        .text-input:focus {
+            /* border: 2px solid #f00;*/
+            border-color: #f00;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        label {
+            padding-bottom: 10px;
+        }
+
+        .form-bachground {
+            background-color: black;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            width: 80%;
+            padding: 0 40px 40px;
+            max-width: 700px;
+            background-color: white;
+        }
+        .form-container h3 {
+            padding-top: 20px;
+            font-weight: 1000;
+        }
+
+        .text1 {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .text1>input {
+            height: 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid rgb(202, 202, 202);
+            transition: 0.5s;
+        }
+        .text1>input:focus {
+            height: 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            outline: none;
+            border: 2px solid rgb(175, 70, 70);
+        }
+
+        .text2 {
+            display: flex;
+        }
+        .text2-1 {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            
+        }
+        .text2-2 {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .text2-3 {
+            width: 20px;
+        }
+        .text2 input {
+            width: 100%;
+            height: 30px;
+            border: 2px solid rgb(212, 211, 211);
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+        .text2 input:focus {
+            height: 30px;
+            border: 2px solid rgb(212, 211, 211);
+            border-radius: 5px;
+            outline: none;
+            border: 2px solid rgb(207, 24, 24);
+        }
+
+        .text3 {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .text3>textarea {
+            border: 2px solid rgb(184, 184, 184);
+            border-radius: 5px;
+            height: 100px;
+            transition: 0.5s;
+            resize: none;
+        }
+        .text3>textarea:focus {
+            border: 2px solid rgb(255, 106, 106);
+            border-radius: 5px;
+            outline: none;
+            height: 100px;
+            resize: none;
+        }
+
+        .last {
+            display: flex;
+            justify-content: space-between;
+        }
+        .last input:hover {
+            cursor: pointer;
+        }
+        .last-1 {
+            display: flex;
+        }
+        .last-1>input {
+            width: 25px;
+            height: 25px;
+        }
+        .last-2>input {
+            width: 100px;
+            height: 30px;
+            background-color: rgba(235, 103, 15, 0.829);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            transition: 0.5s;
+        }
+        .last-2>input:hover {
+            width: 100px;
+            height: 30px;
+            background-color: rgba(190, 46, 9, 0.829);
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>연습</h2>
+    <form>
+        <input type="text">
+        <input type="text" class="text-input">
+        <button type="submit">전송</button>
+        <!-- <form> 태그 안에서 버튼의 타입을 아써주면 submit으로 동작함
+            type은 명시적으로 써주는 것을 권장 -->
+
+        <!-- input 태그 쓸 때 label 태그도 같이 사용(권장) -->
+        <p>
+            <label for="name">너의 이름은</label>
+        </p>            
+        <input type="text" id="name" class="text-input" aria-label="너의 이름은">
+    </form>
+
+    <h2>실전</h2>
+    <!-- 박스부터 그리기 -->
+    <div class="form-bachground">
+        <div class="form-container">
+            <form>
+                <h3 >Contact Us</h3>
+                <!-- label, input, textarea -->
+                <div class="text1" >
+                    <label for="Your Email">Your Email</label>
+                    <input type="text" id="Your Email" placeholder="email@example.com" >
+                </div>
+
+                <div class="text2">
+                    <div class="text2-1">
+                        <label for="First Name">First Name</label>
+                        <input type="text" id="First Name">
+                    </div>
+                    <div class="text2-3"></div>
+                    <div class="text2-2">
+                        <label for="Last Name">Last Name</label>
+                        <input type="text" id="Last Name">
+                    </div>
+                </div>
+
+                <div class="text3">
+                    <label for="Message">Message</label>
+                    <textarea name="Message-text" id="Message"></textarea>
+                </div>
+                <div class="last">
+                    <div class="last-1">
+                        <input type="checkbox" id="agree">
+                        <label for="agree">Agree</label>
+                    </div>
+                    <div class="last-2">
+                        <input type="button" value="SEND">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
