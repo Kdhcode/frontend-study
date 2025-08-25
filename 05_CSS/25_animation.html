@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- 구글 머티리얼 심볼/아이콘 -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        .btn {
+            padding: 15px 20px;
+            font-size: 20px;
+            background-color: skyblue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            animation: shake 1s;
+        }
+        .btn-shake-hard:hover {
+            animation: shake-hard 10s infinite;
+        }
+        /* CSS @ketframes Rule: 애니메이션 코드를 설정 */
+        @keyframes shake {
+            /* 키 프레임 셀렉터: 애니메이션이 진행되는 과정을 선택해서 지정
+                0-100%
+                from (0%와 동일)
+                to (100%와 동일)
+            */
+            0% {transform: rotate(0deg);}
+            25% {transform: rotate(-8deg);}
+            50% {transform: rotate(8deg);}
+            75% {transform: rotate(-8deg);}
+            100% {transform: rotate(0deg);}
+        }
+        @keyframes shake-hard {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-10px, -20px) rotate(-10deg); }
+            20% { transform: translate(-20px, 0px) rotate(10deg); }
+            30% { transform: translate(20px, 20px) rotate(0deg); }
+            40% { transform: translate(10px, -10px) rotate(10deg); }
+            50% { transform: translate(-10px, 20px) rotate(-10deg); }
+            60% { transform: translate(-20px, 10px) rotate(0deg); }
+            70% { transform: translate(20px, 10px) rotate(-10deg); }
+            80% { transform: translate(-10px, -10px) rotate(10deg); }
+            90% { transform: translate(10px, 20px) rotate(0deg); }
+            100% { transform: translate(10px, -20px) rotate(-10deg); }
+        }
+        #modal {
+            width: 300px;
+            height: 200px;
+            border: 1px solid lightgray;
+            background-color: whitesmoke;
+            padding: 20px;
+        }
+        .shake-shake {
+            animation: shake-hard .4s;
+        }
+        .material-symbols-outlined{
+            font-size: 100px;
+            color: cornflowerblue;
+            cursor: pointer;
+        }
+        .turn:hover {
+            animation-name: turn;
+            animation-duration: 1s;
+            /* 애니메이션이 재생되지 않을 때 요소에 대한 스타일을 지정 */
+            animation-fill-mode: forwards; /* 애니메이션이 끝났을 때 마지막 상태 유지 */
+        }
+        @keyframes turn {
+            0% {transform: rotate(0deg);}
+            25% {transform: rotate(-15deg);}
+            50% {transform: rotate(-60deg);}
+            75% {transform: rotate(-105deg);}
+            100% {transform: rotate(-150deg);}
+        }
+        .spin {
+            animation: spin 3s  infinite;
+            animation-timing-function: linear;
+
+        }
+        @keyframes spin {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <h2>shake 애니메이션 만들기</h2>
+    <button type="button" class="btn btn-shake">흔들흔들</button>
+    <button type="button" class="btn btn-shake-hard">바들바들</button>
+
+    <h2>Tip! 애니메이션을 이용한 창 흔들기</h2>
+    <div id="modal">
+        <label for="age">나이:</label>
+        <input type="number" id="age">
+        <button type="button" onclick="register()">등록</button>
+    </div>
+
+    <h2>turn 애니메이션 만들기</h2>
+        <span class="material-symbols-outlined turn">add</span>
+
+    <h2>spin 애니메이션 만들기</h2>
+        <span class="material-symbols-outlined spin">rotate_right
+    </span>
+    <h1 class="animate__animated animate__bounce animate_delay-2s">An animated element</h1>
+    <h1 class="animate__animated animate__backInRight">An animated element</h1>
+    <h1 class="animate__animated animate__rubberBand animate_delay-5s animate__infinite">An animated element</h1>
+
+    <script>
+        const modalEl = document.querySelector('#modal');
+        const AgeInputEl = document.querySelector('#age');
+
+        function register(){
+            console.log(AgeInputEl.value);
+
+            // 유효성 검사
+            if (AgeInputEl.value === '' || AgeInputEl.value < 0){
+                modalEl.classList.add('shake-shake');
+                setTimeout(function () {
+                    modalEl.classList.remove('shake-shake');
+                },500); //0.5초 뒤에 콜백 함수를 실행해라
+            }
+        }
+    </script>
+</body>
+</html>
