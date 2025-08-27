@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
     <style>
         *{
             box-sizing: border-box;
@@ -109,11 +110,11 @@
     <div class="login-background">
         <div class="login-container">
             <div class="login-item">
-                <input type="text" id="login-id" class="login-id" aria-label="아이디 또는 전화번호">
+                <input type="text" id="login-id" class="form-input login-id" aria-label="아이디 또는 전화번호">
                 <label for="login-id" aria-label="hidden" class="text-lable">아이디 또는 전화번호</label>
             </div>
             <div class="login-item">
-                <input type="password" id="login-pw" class="login-pw" aria-label="비밀번호">
+                <input type="password" id="login-pw" class="form-input login-pw" aria-label="비밀번호">
                 <label for="login-pw" class="text-lable">비밀번호</label>
                 <span class="material-symbols-outlined imgOn">visibility</span>
                 <span class="material-symbols-outlined imgOff">visibility_off</span>
@@ -123,5 +124,21 @@
         </div>
     </div>
 
+    <script>
+        const inputEls = document.querySelectorAll('input.form-input');
+
+        inputEls.forEach(function (inputEl) {
+            console.log(inputEl);
+            const parentEl = inputEl.parentElement; // 부모 요소를 반환
+            console.log(parentEl);
+            // focus: 포거스가 주어졌을 떄 발생
+            inputEl.addEventListener('focus',function () {
+                parentEl.classList.add('focused');
+            });
+        });
+
+
+
+    </script>
 </body>
 </html>
