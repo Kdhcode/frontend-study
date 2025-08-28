@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./3_1_hw_variable.js"></script>
+    <link rel="stylesheet" href="./3_1_hw_variable.CSS">
+</head>
+<body>
+    <div class="background">
+        <h1>날씨 확인</h1>
+        <div class="container">
+            <div class="items">
+                <span>계절</span>
+                <form class="season">
+                        <input type="radio" name="season" id="sp" value="봄">
+                        <label for="sp">봄</label>
+                        <input type="radio" name="season" id="su" value="여름">
+                        <label for="su">여름</label>
+                        <input type="radio" name="season" id="fa" value="가을">
+                        <label for="fa">가을</label>
+                        <input type="radio" name="season" id="wi" value="겨울">
+                        <label for="wi">겨울</label>
+                </form>
+            </div>
+            <div class="items">
+                <span>기온</span>
+                <input type="text" class="num">
+            </div>
+            <div class="items">
+                <button type="button" onclick="cklickSeason()">확인</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

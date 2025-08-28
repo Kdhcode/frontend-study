@@ -1,0 +1,9 @@
+.background{
+    display: flex;
+    flex-direction: column;
+    margin: 100px;
+}
+
+.items form {
+    display: flex;
+}
