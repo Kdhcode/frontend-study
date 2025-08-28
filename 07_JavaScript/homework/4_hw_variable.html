@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <h1>콤보세트</h1>
+        <div class="container">
+            <span>개수:</span>
+            <input type="text" class="num">
+            <button type="button" class="click" onclick="cobomSet()">주문</button>
+        </div>
+        <div class="item">
+        </div>
+    </div>
+
+    <script>
+        const cobomNum = document.querySelector('.num');
+        const cobomBox = document.querySelector('.item');
+
+        function cobomSet() {
+            console.log(cobomNum.value);
+            
+            for (let i = 0; i < Number(cobomNum.value); i++) {
+                cobomBox.innerHTML +=  (`
+                    <img src="./images/popcorn.png">
+                    <img src="./images/coke.png">
+                    <img src="./images/coke.png"> <br>`);
+                    };
+            cobomNum.value='';
+        }
+
+
+    </script>
+</body>
+</html>
