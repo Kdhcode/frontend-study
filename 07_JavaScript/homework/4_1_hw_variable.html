@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
+        .item {
+            border: 1px solid black;
+        }
+        .item td{
+            border: 1px solid black;
+        }
+        .items-orange {
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+        }
+        .item-o {
+            display: flex;
+            flex-direction: column;
+            margin: 30px;
+        }
+        .item-o img {
+            width: 50px;
+        }
+        
     </style>
 </head>
 <body>
@@ -16,32 +35,60 @@
         </div>
         <div >
             <table class="item">
-                <tr><td>1</td></tr>
+                <tbody></tbody>
             </table>
         </div>
     </div>
 
+    <hr>
+
+    <div class="background">
+        <h1>귤 농장</h1>
+        <div class="container-orange">
+            <button type="button" class="orange-add" onclick="orangeAdd()">체험시작</button>
+        </div>
+        <div class="items-orange">
+            
+        </div>
+    </div>
+
     <script>
-        const cobomNum = document.querySelector('.num');
-        const tableBox = document.querySelector('.item');
-        let row = 1;
-        let col = 1;
-        let count = 1;
+        const tableBox = document.querySelector('.item tbody');
+        
         function tableAdd() {
+            tableBox.innerHTML = ``;
+            let row = 1;
+            let col = 1;
+            let count = 1;
+            let addText = '';
             row = Number(prompt('테이블 행의 갯수는?'));
             col = Number(prompt('테이블 열의 갯수는?'));
-            
             for (let i = 1; i <= row; i++) {
-                tableBox.innerHTML = `<tr>`;
+                addText += '<tr>';
                 for (let j = 1; j <= col; j++) {
-                tableBox.innerHTML = `<td>${count++}</td>`;
-                    
-                    
+                    addText += `<td>${count++}</td>`; 
                 }
-                tableBox.innerHTML = `</tr>`;
-                
+                addText += '</tr>';
             }
-            
+            tableBox.innerHTML = addText;            
+        }
+
+        function orangeAdd() {
+            const itemOrange = document.querySelector('.items-orange');
+            let orangeW = Number(prompt('바구니 무게?'));
+            itemOrange.innerHTML = '';
+            count = 1;
+            let addO = ''
+            while (orangeW => 0) {
+                addO += ` <div class="item-o"><span>귤 ${count++}0g</span> <img src="./images/gyul.png"></div>`;
+                orangeW -=10;
+                console.log(itemOrange.innerHTML);
+                
+                if(count === 21) break;
+            }
+            itemOrange.innerHTML = addO;
+            console.log(itemOrange.innerHTML);
+            itemOrange.innerHTML += `<h1 class = "fi">체험 종료!!</h1>`;
         }
             </script>
             </body>
