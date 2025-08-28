@@ -1,0 +1,17 @@
+.background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px;
+    width: 500px;
+}
+.items{
+    font-size: 20px;
+}
+.change-text{
+    font-size: 18px;
+}
+#dung {
+    width: 150px;
+    height: 150px;
+}

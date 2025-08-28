@@ -172,7 +172,20 @@
     <label for="volume">음량(0~50):</label>
     <input type="range" id="volume" min="0" max="50" step="2">
 
-    <br>
+    <!-- Quiz -->
+    <span id="volumeValue"></span>
+    <script>
+        const volumeEl = document.querySelector('#volume');
+        const volumeC = document.querySelector('#volumeValue');
+            
+        volumeC.textContent = volumeEl.value;
+        volumeEl.addEventListener('input', function () { // 'change' 이벤트랑 동작 비교
+            volumeC.textContent = volumeEl.value;
+            
+        });
+        
+    </script>
+    <hr>
     <!-- 비밀번호 -->
     <label for="pwd">비밀번호:</label>
     <input type="password" id="pwd" maxlength="10">

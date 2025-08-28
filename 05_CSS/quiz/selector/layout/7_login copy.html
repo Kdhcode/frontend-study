@@ -83,7 +83,9 @@
       color: rgba(0, 0, 0, 0.5);
       transition: 0.3s;
     }
-    .login-container .form-input:focus + .text-label {
+    .login-container .form-input:focus + .text-label,
+    .login-container .id-box.on .text-label,
+    .login-container .pw-box.on .text-label{
       font-size: 12px;
       bottom: 30px;
     }
@@ -117,6 +119,8 @@
   <script>
         const inputEls = document.querySelectorAll('input.form-input');
         const eyeIcon = document.querySelector('.icon-eye');
+        const eyePassword =document.querySelector('#pw.form-input')
+        
         inputEls.forEach(function (inputEl) {
             console.log(inputEl);
             const parentEl = inputEl.parentElement; // 부모 요소를 반환
@@ -130,12 +134,37 @@
             inputEl.addEventListener('blur',function () {
                 parentEl.classList.remove('focused');
             });
+
+            // 이벤트 추가 실습
+            // change: 요소의 값이 변경되고 포소스를 잃었을 때 발생
+            inputEl.addEventListener('change',function () {
+              console.log('change이벤트 발생');
+              console.log(inputEl.value);
+              if (inputEl.value) { // input 요소에 값이 있으면
+                parentEl.classList.add('on');
+              } else {
+                parentEl.classList.remove('on');
+              }
+            });
+
+            // input: 요소가 입력을 받을 때 마다 변경된 직후에 발생
+            inputEl.addEventListener('input',function () {
+              console.log('input이벤트 발생');
+            })
         });
 
         eyeIcon.addEventListener('click', function () {
-          console.log(eyeIcon.textContent);
-          eyeIcon.setAttribute('visibility');
+          
+          if(eyeIcon.textContent === 'visibility_off'){
+            eyeIcon.innerHTML = 'visibility';
+            eyePassword.type = 'text';
+            
+          } else {
+            eyeIcon.innerHTML = 'visibility_off';
+            eyePassword.type = 'password';
+          }
         });
+        
 
 
 
