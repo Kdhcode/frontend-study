@@ -5,38 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
+        .img-sponge {
+            width: 150px; 
+            height: 150px;
+            border: 4px dotted green;
+            border-radius: 40px;
+        }
     </style>
 </head>
 <body>
     <div class="background">
-        <h1>콤보세트</h1>
+        <h1>둥글 둥글 테두리</h1>
         <div class="container">
-            <span>개수:</span>
-            <input type="text" class="num">
-            <button type="button" class="click" onclick="cobomSet()">주문</button>
+            <img src="./images/sponge.png" alt="스폰지밥" class="img-sponge">
         </div>
         <div class="item">
+            <input type="range" name="border-radius-change" id="border-radius-change" 
+            onchange="radiusAdd()" min="0" max="75" step ="5">
+            <span id="ramgeValue"></span>
+
         </div>
     </div>
 
     <script>
-        const cobomNum = document.querySelector('.num');
-        const cobomBox = document.querySelector('.item');
-
-        function cobomSet() {
-            console.log(cobomNum.value);
-            
-            for (let i = 0; i < Number(cobomNum.value); i++) {
-                cobomBox.innerHTML +=  (`
-                    <img src="./images/popcorn.png">
-                    <img src="./images/coke.png">
-                    <img src="./images/coke.png"> <br>`);
-                    };
-            cobomNum.value='';
+        const imgSponge = document.querySelector('.img-sponge');
+        const ramgeValue = document.querySelector('#ramgeValue');
+        const Value = document.querySelector('#border-radius-change');
+        
+            ramgeValue.textContent = Value.value;
+        function radiusAdd() {
+            ramgeValue.textContent = Value.value;
+            imgSponge.style = `border-radius: ${Value.value}px`;
         }
 
 
     </script>
 </body>
 </html>
+
+    <script>
