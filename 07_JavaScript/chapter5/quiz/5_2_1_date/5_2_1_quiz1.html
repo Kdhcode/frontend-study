@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 문제1
+    // 날짜 생성하기
+
+    // 2023년 2월 20일, 오전 3시 12분을 나타내는 Date 객체를 만들어보세요.
+    // 그리고 생성한 날짜 객체 정보를 예쁘게 출력하세요.
+
+    // 풀이1
+    const someday = new Date(2023,1,20,3,12);
+
+    const somedayYear = someday.getFullYear();
+    const somedayMonth = someday.getMonth();
+    // const somedayMonth = String(someday.getMonth() + 1).padStart(2, '0');
+    const somedayDay = someday.getDay();
+    // const somedayDay = String(someday.getDay() + ).padStart(2, '0');
+    const somedayHours = someday.getHours();
+    // const somedayHours = String(someday.getHours() + ).padStart(2, '0');
+    const somedayMin = someday.getMinutes();
+    // const somedayMinutes = String(someday.getMinutes() + ).padStart(2, '0');
+    
+    let chngeMonth = 0;
+    if (somedayMonth + 1 < 10) {
+      changeMonth = '0' + (somedayMonth + 1);
+    } else {
+      changeMonth = (somedayMonth + 1);
+    }
+
+    let chngeDay = 0;
+    if (somedayDay < 10) {
+      chngeDay = '0' + (somedayDay);
+    } else {
+      chngeDay = somedayDay;
+    }
+
+    let chngeHours = 0;
+    if (somedayHours < 10) {
+      chngeHours = '0' + (somedayHours);
+    } else {
+      chngeHours = somedayHours;
+    }
+    
+    let chngeMin = 0;
+    if (somedayMin < 10) {
+      chngeMin = '0' + (somedayMin);
+    } else {
+      chngeMin = somedayMin;
+    }
+
+    document.write(`${somedayYear}-${changeMonth}-${chngeDay} ${chngeHours}:${chngeMin}`);
+
+
+  </script>
+</body>
+</html>
